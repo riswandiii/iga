@@ -117,7 +117,7 @@ class InovasiPemerintahDaerahController extends Controller
             'rancang_bangun' => ['required', function ($attribute, $value, $fail) {
                 $wordCount = str_word_count(strip_tags($value));
 
-                if ($wordCount < 350) {
+                if ($wordCount < 350) { 
                     $fail("Rancang bangun minimal 350 kata!");
                 }
             }],

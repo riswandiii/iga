@@ -34,6 +34,7 @@ class DashboardController extends Controller
                 $tanggal = 'Batas Penginputan Inovasi Sudah Lewat';
             }   
         }else{
+            $tanggalDatabase =  'Belum Ada Tanggal yang Diatur';
             $tanggal = 'noTanggal';
         }
         return view('dashboard.dashboard', [
@@ -46,7 +47,9 @@ class DashboardController extends Controller
             // 'penerapanMasyarakat' => $penerapanMasyarakat,
             'tanggalSekarang' => $tanggalSekarang,
             'tanggal' => $tanggal,
-            'sampaiTanggal' => $tanggalDatabase->format( 'd F Y' )
+            // 'sampaiTanggal' => $tanggalDatabase->format( 'd F Y' )
+            'sampaiTanggal' => $tanggalDatabase
+            
         ]);
     }
 

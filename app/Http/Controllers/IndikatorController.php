@@ -150,7 +150,7 @@ class IndikatorController extends Controller
          $total = TotalKematangan::where('inovasi_pemerintah_daerah_id', $request->inovasi_pemerintah_daerah_id)->first();
          if(!empty($total)){
              if($dataPendukung->count() > 0){
-                 $total->total = $total->total + $parameter->bobot;
+                 $total->total = $total->total + $parameter->bobot;4
              }else{
                  // $total->total = $total->total + 0;
              }

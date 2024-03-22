@@ -109,13 +109,13 @@ class UserController extends Controller
     public function update(Request $request, string $id)
     {
         $user = User::where('id', $id)->first();
-        if ($user->email == $request->email) {
+        if ($user->no_hp == $request->no_hp) {
             $rules = [
                 'role' => 'required',
                 'opd_id' => '',
                 'nama_inisiator' => '',
                 'nama_panggilan' => 'required|min:5|max:255',
-                'no_hp' => 'required|numeric|digits:12|unique:users',
+                'no_hp' => 'required|numeric|digits:12',
                 'username' => [
                     'required',
                     'regex:/^[a-z._0-9]+$/'
